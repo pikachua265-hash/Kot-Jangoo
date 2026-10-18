@@ -1,0 +1,258 @@
+/* Custom Styles for Kot Jangoo - House of Taste & Royal Heritage Hotel */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --font-royal: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --color-gold: #f59e0b;
+  --color-gold-light: #fde68a;
+  --color-brick: #991b1b;
+  --color-brick-dark: #450a0a;
+  --color-dark: #090d16;
+  --color-card: rgba(18, 24, 38, 0.85);
+  --color-card-border: rgba(245, 158, 11, 0.2);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark);
+  color: #f1f5f9;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-royal {
+  font-family: var(--font-royal);
+  letter-spacing: 0.05em;
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Neon glow effect matching Kot Jangoo signage */
+.neon-glow {
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5), 0 0 35px rgba(220, 38, 38, 0.4);
+}
+
+.gold-glow {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.6), 0 0 20px rgba(217, 119, 6, 0.4);
+}
+
+.box-gold-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25), inset 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+/* Glassmorphism card styles */
+.glass-panel {
+  background: rgba(18, 24, 38, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+}
+
+.glass-panel-subtle {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-accent {
+  background: linear-gradient(135deg, rgba(153, 27, 27, 0.35) 0%, rgba(18, 24, 38, 0.9) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Phone Frame Simulator */
+.phone-simulator-frame {
+  max-width: 440px;
+  min-height: 880px;
+  border-radius: 44px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 12px #1e293b, 0 0 0 14px rgba(245, 158, 11, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.phone-island {
+  width: 120px;
+  height: 28px;
+  background-color: #000;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+/* Table Floor Plan Visuals */
+.table-node {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.table-node:hover:not(.status-booked) {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6));
+}
+
+.table-node.status-available {
+  stroke: #10b981;
+}
+
+.table-node.status-booked {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+}
+
+.table-node.status-selected {
+  stroke: #f59e0b;
+  filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.9));
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.7));
+  }
+}
+
+/* Chair seat circle */
+.chair-seat {
+  fill: #334155;
+  stroke: #475569;
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.table-node.status-available .chair-seat {
+  fill: #064e3b;
+  stroke: #10b981;
+}
+
+.table-node.status-selected .chair-seat {
+  fill: #78350f;
+  stroke: #f59e0b;
+}
+
+/* Bottom Bar Dock */
+.bottom-nav-dock {
+  background: rgba(11, 15, 25, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-btn.active {
+  color: #fbbf24;
+}
+
+.nav-tab-btn.active .nav-icon-wrapper {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(185, 28, 28, 0.25) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.nav-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  width: 16px;
+  height: 3px;
+  background: #f59e0b;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+/* Badge pulse animation */
+.badge-live-pulse {
+  position: relative;
+}
+.badge-live-pulse::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: inherit;
+  opacity: 0.7;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Hero Castle Shimmer */
+.castle-hero-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.castle-hero-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.2) 0%, rgba(9, 13, 22, 0.85) 70%, rgba(9, 13, 22, 0.98) 100%);
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

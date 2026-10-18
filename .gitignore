@@ -1,0 +1,13 @@
+# Windows thumbnail cache
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Setup scripts
+setup_git.py
+init_repo.ps1

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kot Jangoo - House of Taste & Royal Heritage Hotel</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/hotel_tower_logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            royal: {
+              gold: '#f59e0b',
+              goldLight: '#fde68a',
+              brick: '#991b1b',
+              brickDark: '#450a0a',
+              dark: '#090d16',
+              surface: '#111827'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-[#070b12] text-slate-100 min-h-screen selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Main Viewport Container (supports toggle to Phone Simulator frame) -->
+  <div id="app-viewport-container" class="transition-all duration-300 max-w-7xl mx-auto min-h-screen flex flex-col justify-between relative bg-[#090d16]">
+    
+    <!-- Top Royal Header -->
+    <header id="app-top-header" class="sticky top-0 z-40 bg-[#090d16]/90 backdrop-blur-xl border-b border-amber-500/20"></header>
+
+    <!-- Main Dynamic Content Views -->
+    <main id="app-main-content" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 pt-5"></main>
+
+    <!-- Floating / Docked Bottom Navigation Bar -->
+    <nav id="app-bottom-nav" class="bottom-nav-dock fixed bottom-0 left-0 right-0 z-40"></nav>
+
+    <!-- Global Modal & Drawer Host -->
+    <div id="app-modal-container" class="hidden"></div>
+  </div>
+
+  <!-- Data & Application Logic Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
